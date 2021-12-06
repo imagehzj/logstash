@@ -4,11 +4,13 @@ LABEL maintainer="shoothzj@gmail.com"
 
 WORKDIR /opt/sh
 
+ENV LOGSTASH_HOME /opt/sh/logstash
+
 ARG TARGETARCH
 
 ARG amd_download=7.15.2-linux-x86_64
 
-ARG arm_download=7.15.2-linux-arm64
+ARG arm_download=7.15.2-linux-aarch64
 
 RUN if [[ "$TARGETARCH" = "amd64" ]]; \
     then download=$amd_download; \
